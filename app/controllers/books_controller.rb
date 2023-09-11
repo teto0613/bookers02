@@ -38,15 +38,17 @@ class BooksController < ApplicationController
     redirect_to '/books'
   end
 
+  
+
+  # 投稿データのストロングパラメータ
+  private
+  
   def is_matching_login_user
     user = User.find(params[:id])
     unless user.id == current_user.id
       redirect_to user_path(current_user.id)
     end
   end
-
-  # 投稿データのストロングパラメータ
-  private
 
   def book_params
     params.require(:book).permit(:title, :body)
