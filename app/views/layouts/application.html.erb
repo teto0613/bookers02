@@ -27,26 +27,26 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li class = "nav-link text-light">
-                  <%= link_to  users_path(current_user.id) do %>
-                  <i class="fa-solid fa-house-chimney-window"></i>
+                  <%= link_to  user_path(current_user.id) do %>
+                  <i class="fa-solid fa-home"></i>
                    Home
                   <% end %>
               </li>
               <li class = "nav-link text-light">
-                  <%= link_to  "/users" do %>
+                  <%= link_to  users_path do %>
                   <i class="fa-solid fa-users"></i>
                    Users
                   <% end %>
               </li>
               <li class = "nav-link text-light">
-                  <%= link_to  "/books" do %>
+                  <%= link_to  books_path do %>
                   <i class="fa-solid fa-book-open"></i>
                    Books
                   <% end %>
               </li>
               <li class = "nav-link text-light">
                   <%= link_to  destroy_user_session_path, method: :delete do %>
-                  <i class="fa-solid fa-right-from-bracket"></i>
+                  <i class="fa-solid fa-sign-out-alt"></i>
                    Log out
                 　<% end %>
               </li>
@@ -54,7 +54,7 @@
             <% else %>
               <li class = "nav-link text-light">
                   <%= link_to  "/" do %>
-                  <i class="fa-solid fa-house-chimney-window"></i>
+                  <i class="fa-solid fa-home"></i>
                    Home
                   <% end %>
               </li>
@@ -72,7 +72,7 @@
               </li>
               <li class = "nav-link text-light">
                   <%= link_to  "/users/sign_in" do %>
-                  <i class="fa-solid fa-right-to-bracket"></i>
+                  <i class="fa-solid fa-sign-in-alt"></i>
                    Log in
                   <% end %>
               </li>
